@@ -2,6 +2,9 @@ import React from 'react';
 import Article from './article';
 
 class Articles extends React.Component{
+    componentDidMount(){
+        //Make API call
+    }
     render(){
         let allArticles =<h4>No Articles!</h4>
 
