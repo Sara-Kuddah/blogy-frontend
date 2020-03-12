@@ -4,9 +4,11 @@ import axios from 'axios';
 
 
  const getAllArticles = ()=>{
-  return axios.get(`${apiURL}/articales`);
-
-                     
+  return axios.get(`${apiURL}/articales`);                  
 };
 
-export {getAllArticles,};
+const deleteArticleByID =(id)=>{
+    return axios.delete(`${apiURL}/articales/${id}`)
+}
+
+export {getAllArticles,deleteArticleByID};
