@@ -1,10 +1,17 @@
 import React from 'react';
 import Article from './article';
+import {getAllArticles}  from '../api'
 
 class Articles extends React.Component{
-    componentDidMount(){
-        //Make API call
-    }
+    componentDidMount() {
+        getAllArticles()
+          .then((response) => {
+            this.props.setArticles(response.data.articles);
+          })
+          .catch((error) => {
+            console.log('API ERROR:', error);
+          });
+      }
     render(){
         let allArticles =<h4>No Articles!</h4>
 
